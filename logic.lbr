@@ -297,6 +297,72 @@ The input is designed with a lower threshold circuit to match 1.8V input logic a
 </device>
 </devices>
 </deviceset>
+<deviceset name="MC74VHC1GT125">
+<description>&lt;h1&gt;MC74VHC1GT125: Single Non-Inverting Buffer, 3-State
+&lt;/h1&gt;
+
+&lt;p&gt;
+&lt;a href="https://www.onsemi.jp/PowerSolutions/product.do?id=MC74VHC1GT125"&gt;Website&lt;/a&gt;
+&lt;a href="https://www.onsemi.jp/PowerSolutions/document/MC74VHC1GT125-D.PDF"&gt;Datasheet&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;blockquote cite="https://www.onsemi.jp/PowerSolutions/product.do?id=MC74VHC1GT125"&gt;
+&lt;p&gt;
+The MC74VHC1GT125 is a single gate noninverting buffer fabricated with silicon gate CMOS technology. It achieves high speed operation similar to equivalent Bipolar Schottky TTL while maintaining CMOS low power dissipation.
+&lt;/p&gt;
+&lt;p&gt;
+The MC74VHC1GT125 requires the 3-state control input (OE(bar)) to be set High to place the output into the high impedance state.
+&lt;/p&gt;
+&lt;p&gt;
+The device input is compatible with TTL-type input thresholds and the output has a full 5V CMOS level output swing. The input protection circuitry on this device allows overvoltage tolerance on the input, allowing the device to be used as a logic-level translator from 3.0V CMOS logic to 5.0V CMOS Logic or from 1.8V CMOS logic to 3.0V CMOS Logic while operating at the high-voltage power supply.
+&lt;/p&gt;
+&lt;p&gt;
+The MC74VHC1GT125 input structure provides protection when voltages up to 7V are applied, regardless of the supply voltage. This allows the MC74VHC1GT125 to be used to interface 5V circuits to 3V circuits. The output structures also provide protection when VCC = 0V. These input and output structures help prevent device destruction caused by supply voltage - input/output voltage mismatch, battery backup, hot insertion, etc.
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;High Speed: tPD = 3.5ns (Typ) at VCC = 5V&lt;/li&gt;
+&lt;li&gt;Low Power Dissipation: ICC= 1µA (Max) at TA = 25°C&lt;/li&gt;
+&lt;li&gt;TTL-Compatible Inputs: VIL = 0.8 V; VIH = 2.0 V&lt;/li&gt;
+&lt;li&gt;CMOS-Compatible Outputs: VOH &gt; 0.8 VCC ; VOL &lt; 0.1 VCC @Load&lt;/li&gt;
+&lt;li&gt;Power Down Protection Provided on Inputs and Outputs&lt;/li&gt;
+&lt;li&gt;Balanced Propagation Delays&lt;/li&gt;
+&lt;li&gt;Pin and Function Compatible with Other Standard Logic Families&lt;/li&gt;
+&lt;li&gt;Chip Complexity:FETs = 62; Equivalent Gates = 16&lt;/li&gt;
+&lt;li&gt;Pb-Free Packages are Available&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description>
+<gates>
+<gate name="G$1" symbol="GATE_BUFFER_WITH_ENABLE" x="2.54" y="5.08"/>
+<gate name="G$2" symbol="POWER_CONSORT" x="25.4" y="5.08"/>
+</gates>
+<devices>
+<device name="DF" package="SC70-5L">
+<connects>
+<connect gate="G$1" pin="!EN" pad="1"/>
+<connect gate="G$1" pin="A" pad="2"/>
+<connect gate="G$1" pin="Y" pad="4"/>
+<connect gate="G$2" pin="P$V+" pad="5"/>
+<connect gate="G$2" pin="P$V-" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="DT" package="SOT23-5L">
+<connects>
+<connect gate="G$1" pin="!EN" pad="1"/>
+<connect gate="G$1" pin="A" pad="2"/>
+<connect gate="G$1" pin="Y" pad="4"/>
+<connect gate="G$2" pin="P$V+" pad="5"/>
+<connect gate="G$2" pin="P$V-" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </drawing>
