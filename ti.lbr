@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -234,6 +234,69 @@ package type OT</description>
 </symbol>
 </symbols>
 <devicesets>
+<deviceset name="SN74LV1T125">
+<description>&lt;h1&gt;SN74LV1T125 Single Power Supply Single Buffer Gate with 3-State Output CMOS Logic
+Level Shifter&lt;/h1&gt;
+
+&lt;p&gt;
+&lt;a href="http://www.ti.com/product/sn74lv1t125"&gt;Website&lt;/a&gt;
+&lt;a href="http://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf"&gt;Datasheet&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;blockquote cite="http://www.ti.com/product/sn74lv1t125"&gt;
+&lt;p&gt;
+SN74LV1T125 is a low voltage CMOS gate logic that operates at a wider voltage range for industrial, portable, telecom, and automotive applications. The output level is referenced to the supply voltage and is able to support 1.8V/2.5V/3.3V/5V CMOS levels.
+&lt;/p&gt;
+&lt;p&gt;
+The input is designed with a lower threshold circuit to match 1.8V input logic at VCC = 3.3V and can be used in 1.8V to 3.3V level up translation. In addition, the 5V tolerant input pins enable down translation (e.g. 3.3V to 2.5V output at VCC = 2.5V). The wide VCC range of 1.8V to 5.5V allows generation of desired output levels to connect to controllers or processors.
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Single-Supply Voltage Translator at 5.0/3.3/2.5/1.8V VCC&lt;/li&gt;
+&lt;li&gt;Operating Range of 1.8V to 5.5V&lt;/li&gt;
+&lt;li&gt;Up Translation&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;1.2V(1) to 1.8V at 1.8V VCC&lt;/li&gt;
+&lt;li&gt;1.5V(1) to 2.5V at 2.5V VCC&lt;/li&gt;
+&lt;li&gt;1.8V(1) to 3.3V at 3.3V VCC&lt;/li&gt;
+&lt;li&gt;3.3V to 5.0V at 5.0VVCC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Down Translation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description>
+<gates>
+<gate name="G$1" symbol="GATE_BUFFER_WITH_ENABLE" x="2.54" y="5.08"/>
+<gate name="G$2" symbol="POWER_CONSORT" x="25.4" y="5.08"/>
+</gates>
+<devices>
+<device name="DBVR" package="SOT23-5L">
+<connects>
+<connect gate="G$1" pin="!EN" pad="1"/>
+<connect gate="G$1" pin="A" pad="2"/>
+<connect gate="G$1" pin="Y" pad="4"/>
+<connect gate="G$2" pin="P$V+" pad="5"/>
+<connect gate="G$2" pin="P$V-" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="DCKR" package="SC70-5L">
+<connects>
+<connect gate="G$1" pin="!EN" pad="1"/>
+<connect gate="G$1" pin="A" pad="2"/>
+<connect gate="G$1" pin="Y" pad="4"/>
+<connect gate="G$2" pin="P$V+" pad="5"/>
+<connect gate="G$2" pin="P$V-" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </drawing>
